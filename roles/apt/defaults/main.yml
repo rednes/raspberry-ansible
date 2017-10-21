@@ -1,0 +1,15 @@
+---
+apt:
+  all_update_flag: False
+  all_upgrade_flag: False
+  packages:
+    - name: python-apt
+    - name: vim
+    - name: wget
+    - name: apache2
+    - name: php
+    - name: php-mysql
+    - name: php-gd
+    - name: php-mbstring
+    - name: mysql-server
+    - name: python-mysqldb

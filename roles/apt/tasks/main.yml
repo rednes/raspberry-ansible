@@ -1,0 +1,28 @@
+---
+- name: python-apt installed?
+  shell: dpkg -l python-apt
+  failed_when: False
+  changed_when: False
+  register: dpkg_result
+
+- name: install python-apt
+  shell: apt-get install -y python-apt
+  when: dpkg_result.stdout.count("ii  python-apt")==0
+
+- name: upgrade all packages
+  apt:
+    name: '*'
+    state: latest
+  when: apt.all_upgrade_flag 
+
+- name: update all packages
+  apt:
+    upgrade: dist
+  when: apt.all_update_flag
+
+- name: install apt packages
+  apt:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default("present") }}'
+    update_cache: yes
+  with_items: '{{ apt.packages }}'

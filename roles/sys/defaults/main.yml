@@ -1,0 +1,7 @@
+---
+sys:
+  locale: ja_JP.UTF-8
+  timezone: Asia/Tokyo
+
+  services:
+    - {name: bluetooth, enabled: no, state: stopped}

@@ -1,0 +1,15 @@
+---
+archive_url: https://ja.wordpress.org/wordpress-4.8.2-ja.tar.gz
+
+install_path: /opt
+
+apache:
+  user: www-data
+  group: www-data
+
+mysql_user:
+  name: wordpress-user
+  password: wordpress
+
+mysql_db:
+  db_name: wordpress

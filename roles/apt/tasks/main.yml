@@ -1,14 +1,4 @@
 ---
-- name: python-apt installed?
-  shell: dpkg -l python-apt
-  failed_when: False
-  changed_when: False
-  register: dpkg_result
-
-- name: install python-apt
-  shell: apt-get install -y python-apt
-  when: dpkg_result.stdout.count("ii  python-apt")==0
-
 - name: upgrade all packages
   apt:
     name: '*'

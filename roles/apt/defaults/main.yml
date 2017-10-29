@@ -1,7 +1,7 @@
 ---
 apt:
-  all_update_flag: False
-  all_upgrade_flag: False
+  all_update_flag: True
+  all_upgrade_flag: True
   packages:
     - name: python-apt
     - name: vim
